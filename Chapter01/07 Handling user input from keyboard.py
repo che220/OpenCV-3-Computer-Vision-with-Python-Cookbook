@@ -33,5 +33,5 @@ while not finish:
         cv2.putText(image_to_show, 'OpenCV', rand_pt(), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 3)
     elif key == ord('c'):
         image_to_show = np.copy(image)
-    elif key == 27:
+    elif key == 27: # 27 is ESC
         finish = True

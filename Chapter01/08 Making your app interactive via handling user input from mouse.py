@@ -41,6 +41,7 @@ while True:
     k = cv2.waitKey(1)
 
     if k == ord('c'):
+        # only show the cropped part
         if s_y > e_y:
             s_y, e_y = e_y, s_y
         if s_x > e_x:

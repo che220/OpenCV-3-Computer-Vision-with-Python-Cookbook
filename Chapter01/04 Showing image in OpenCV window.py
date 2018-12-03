@@ -9,6 +9,7 @@ parser.add_argument('--path', default='../data/Lena.png', help='Image path.')
 parser.add_argument('--iter', default=50, help='Downsampling-upsampling iterations number.')
 params = parser.parse_args()
 orig = cv2.imread(params.path)
+print('Orig shape:', orig.shape)
 orig_size = orig.shape[0:2]
 
 cv2.imshow("Original image", orig)
@@ -16,6 +17,7 @@ cv2.waitKey(2000)
 
 resized = orig
 
+# downsize image and then restore size, repeat 50 times. The image gets fuzzier and fuzzier (out of focus!)
 for i in range(params.iter):
     resized = cv2.resize(cv2.resize(resized, (256, 256)), orig_size)
     cv2.imshow("downsized&restored", resized)
